@@ -1,0 +1,27 @@
+{
+  "format": "daily-expenses",
+  "schemaVersion": 1,
+  "exportedAt": "2026-11-20T04:00:00.000Z",
+  "records": [
+    {
+      "id": 901,
+      "datetime": 1795147200000,
+      "category": "meals",
+      "amountCents": 2580,
+      "note": "午餐",
+      "payment": "wechat",
+      "createdAt": 1795147200000,
+      "updatedAt": 1795147200000
+    },
+    {
+      "id": 902,
+      "datetime": 1795224600000,
+      "category": "clothing",
+      "amountCents": 8800,
+      "note": "导入衣物",
+      "payment": "alipay",
+      "createdAt": 1795224600000,
+      "updatedAt": 1795224600000
+    }
+  ]
+}

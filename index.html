@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f4f7f6">
+    <meta name="color-scheme" content="light">
+    <meta name="description" content="A private, local-first daily expense tracker.">
+    <title data-i18n="common.appName">日常支出记录</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./styles/app.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#app-main" data-i18n="app.skipToContent">跳到主要内容</a>
+
+    <div class="storage-banner" id="storage-banner" role="status" hidden>
+      <div class="storage-banner__copy">
+        <strong data-i18n="app.storageWarningTitle">本地数据可能被系统清理</strong>
+        <span data-i18n="app.storageWarningBody">浏览器未授予持久存储权限。请定期导出 JSON 备份。</span>
+      </div>
+      <div class="storage-banner__actions">
+        <a class="text-button" href="#/settings" data-i18n="app.storageWarningAction">去备份</a>
+        <button class="icon-button" id="storage-banner-dismiss" type="button" data-i18n-attr="aria-label:common.dismiss">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+            <path d="M18 6 6 18M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22">
+            <path d="M5 5.5h14v13H5z"></path>
+            <path d="M8 9h8M8 13h5"></path>
+          </svg>
+        </span>
+        <span data-i18n="common.appName">日常支出记录</span>
+      </div>
+      <button class="language-button" id="language-toggle" type="button">
+        <span id="language-toggle-label">EN</span>
+      </button>
+    </header>
+
+    <main class="app-main" id="app-main" tabindex="-1">
+      <div class="page-loading" role="status">
+        <span class="loading-dot" aria-hidden="true"></span>
+        <span data-i18n="common.loading">正在加载…</span>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-i18n-attr="aria-label:nav.ariaLabel" aria-label="主导航">
+      <a class="tabbar__item" href="#/add" data-route="add">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+          <path d="M12 5v14M5 12h14"></path>
+        </svg>
+        <span data-i18n="nav.add">记一笔</span>
+      </a>
+      <a class="tabbar__item" href="#/records" data-route="records">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+          <path d="M5 6h14M5 12h14M5 18h14"></path>
+        </svg>
+        <span data-i18n="nav.records">流水</span>
+      </a>
+      <a class="tabbar__item" href="#/stats" data-route="stats">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+          <path d="M5 19V9M12 19V5M19 19v-7"></path>
+        </svg>
+        <span data-i18n="nav.stats">统计</span>
+      </a>
+      <a class="tabbar__item" href="#/settings" data-route="settings">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22">
+          <path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"></path>
+          <path d="M19 13.5v-3l-2-.6a6.6 6.6 0 0 0-.8-1.5l.9-1.9-2.1-2.1-1.9.9a6.6 6.6 0 0 0-1.5-.8L11 3H8l-.6 2a6.6 6.6 0 0 0-1.5.8l-1.9-.9-2.1 2.1.9 1.9a6.6 6.6 0 0 0-.8 1.5l-2 .6v3l2 .6a6.6 6.6 0 0 0 .8 1.5l-.9 1.9 2.1 2.1 1.9-.9a6.6 6.6 0 0 0 1.5.8l.6 2h3l.6-2a6.6 6.6 0 0 0 1.5-.8l1.9.9 2.1-2.1-.9-1.9a6.6 6.6 0 0 0 .8-1.5l2-.6Z"></path>
+        </svg>
+        <span data-i18n="nav.settings">设置</span>
+      </a>
+    </nav>
+
+    <div class="toast-region" id="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+    <dialog class="app-dialog" id="app-dialog" aria-labelledby="app-dialog-title" aria-describedby="app-dialog-message">
+      <form method="dialog" class="app-dialog__form">
+        <div class="app-dialog__body">
+          <h2 id="app-dialog-title"></h2>
+          <p id="app-dialog-message"></p>
+        </div>
+        <div class="app-dialog__actions">
+          <button class="button button--secondary" id="app-dialog-cancel" type="submit" value="cancel" data-i18n="common.cancel">取消</button>
+          <button class="button button--primary" id="app-dialog-confirm" type="submit" value="confirm" data-i18n="common.confirm">确认</button>
+        </div>
+      </form>
+    </dialog>
+
+    <noscript>
+      <div class="noscript-message">请启用 JavaScript 后使用本应用。 Please enable JavaScript to use this app.</div>
+    </noscript>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

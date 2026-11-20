@@ -1,0 +1,27 @@
+{
+  "format": "daily-expenses",
+  "schemaVersion": 1,
+  "exportedAt": "2026-11-20T04:00:00.000Z",
+  "records": [
+    {
+      "id": 903,
+      "datetime": 1795311000000,
+      "category": "meals",
+      "amountCents": 1000,
+      "note": "这一条本身有效",
+      "payment": "cash",
+      "createdAt": 1795311000000,
+      "updatedAt": 1795311000000
+    },
+    {
+      "id": 904,
+      "datetime": 1795311000000,
+      "category": "invalid-category",
+      "amountCents": 2000,
+      "note": "非法分类",
+      "payment": "wechat",
+      "createdAt": 1795311000000,
+      "updatedAt": 1795311000000
+    }
+  ]
+}
