@@ -6,6 +6,8 @@ export const CATEGORIES = Object.freeze([
   "meals",
   "clothing",
   "rent",
+  "chux",
+  "rcxh",
   "household",
   "education",
   "medical",
